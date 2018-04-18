@@ -7,20 +7,21 @@ $(document).ready(function() {
 
   });
 
-  function callPage(pageRefInput, drawingOfCards) {
+  function callPage(pageRefInput) {
     $.ajax({
       url: pageRefInput,
       type: 'GET',
       dataType: 'text',
 
-      success: function(response,drawingOfCards) {
+      success: function(response) {
         console.log('the page was loaded');
         $("#main").css("display", "none");
         $('.content').html(response);
-        if(drawingOfCards){
-          setTimeout (function(){
-            drawingOfCards()
-            }, 50)
+        if (pageRefInput === 'products_cake.html') {
+          drawingOfCards()
+        }
+        if (pageRefInput === 'cart.html'){
+          renderItemToCard()
         }
       },
 
