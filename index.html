@@ -11,19 +11,36 @@
   <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Spectral:400i" rel="stylesheet">
   <script type="text/javascript" src="js/lib/jQuery.js"></script>
-<!--  <script type="text/javascript" src="js/admin/admin_SPA.js"></script>-->
-  <script type="text/javascript" src="js/list/list_add_obj.js"></script>
-  <script type="text/javascript" src="js/list/list_render_Cards.js"></script>
-  <script type="text/javascript" src="js/admin/admin_validation.js"></script>
-  <script type="text/javascript" src="js/cart/cart_addToCart.js"></script>
-  <script type="text/javascript" src="js/cart/cart_render.js"></script>
-  <script type="text/javascript" src="js/cart/cart_remove.js"></script>
-  <script type="text/javascript" src="js/admin/admin_sendRequest.js"></script>
-  <script type="text/javascript" src="js/list/list_add_obj.js"></script>
-  <script type="text/javascript" src="js/list/list_create_obj.js"></script>
+  <!--<script type="text/javascript" src="js/common/SPA.js"></script>-->
+  <!--<script type="text/javascript" src="js/list/render_Cards.js"></script>-->
+  <!--<script type="text/javascript" src="js/admin/admin_validation.js"></script>-->
+  <!--<script type="text/javascript" src="js/cart/add_to_cart.js"></script>-->
+  <!--<script type="text/javascript" src="js/cart/render.js"></script>-->
+  <!-- <script type="text/javascript" src="js/cart/remove.js"></script>-->
+  <!--<script type="text/javascript" src="js/cart/promise.js"></script>-->
+  <!--<script type="text/javascript" src="js/cart/local_id.js"></script>-->
+  <!--<script type="text/javascript" src="js/cart/load_cart_array.js"></script>
+  <script type="text/javascript" src="js/cart/load_obj_array.js"></script>
+  <script type="text/javascript" src="js/cart/load_cart_list.js"></script>-->
+  <script type="text/javascript" src="js/common/sendRequest.js"></script>
+  <script type="text/javascript" src="js/list/add_obj.js"></script>
+  <script type="text/javascript" src="js/list/create_obj.js"></script>
+  <!--<script type="text/javascript" src="js/list/promise.js"></script>-->
+  <!--<script type="text/javascript" src="js/list/list_load.js"></script>-->
   <script type="text/javascript" src="js/lib/jquery-ui/jquery-ui.js"></script>
   <script type="text/javascript" src="js/lib/jquery.form.js"></script>
-  <script type="text/javascript" src="js/lib/script.js"></script>
+  <script type="text/javascript" src="js/common/script.js"></script>
+  <script type="text/javascript" src="js/MVC/abstract-view.js"></script>
+  <script type="text/javascript" src="js/MVC/Products-Cake-View.js"></script>
+  <script type="text/javascript" src="js/MVC/Products-Cake-Model.js"></script>
+  <script type="text/javascript" src="js/MVC/abstract-Controller.js"></script>
+  <script type="text/javascript" src="js/MVC/Cart-view.js"></script>
+  <script type="text/javascript" src="js/MVC/Cart-model.js"></script>
+  <script type="text/javascript" src="js/MVC/Cart-Controller.js"></script>
+  <script type="text/javascript" src="js/MVC/Products-Cake-Controller.js"></script>
+  <script type="text/javascript" src="js/add-product/add_product_view.js"></script>
+  <script type="text/javascript" src="js/router.js"></script>
+
 </head>
 
 <body>
@@ -44,8 +61,8 @@
               <span></span>
 
               <ul class="menu">
-                <a id='menyButtonAbout' href="about.html">O нас</a>
-                <a id='menuButtonProducts' href="products.html">Меню</a>
+                <a id='menyButtonAbout' href="#about.html">O нас</a>
+                <a id='menuButtonProducts' href="#products.html">Меню</a>
                 <a id='menuButtonProductsCake' href="#products_cake">Заказать</a>
                 <a id='menuButtonContacts' href="#contacts">Контакты</a>
                 <a id='menuButtonCart' href="#cart">Корзина</a>
@@ -55,16 +72,16 @@
         </div>
 
         <div class="logo">
-          <a id='logoLinc' href="main.html"> <img class="logo-img" src="images/logo.png" alt="logo"/></a>
+          <a id='logoLinc' href="#main.html"> <img class="logo-img" src="images/logo.png" alt="logo"/></a>
         </div>
 
         <div class="menu-full">
           <nav>
-            <a id='menyButtonAbout' href="about.html">O нас</a>
-            <a id='menuButtonProducts' href="products.html">Меню</a>
-            <a id='menuButtonProductsCake' href="products_cake.html">Заказать</a>
-            <a id='menuButtonContacts' href="contacts.html">Контакты</a>
-            <a id='menuButtonCart' href="cart.html">Корзина</a>
+            <a id='menyButtonAbout' href="#about.html">O нас</a>
+            <a id='menuButtonProducts' href="#products.html">Меню</a>
+            <a id='menuButtonProductsCake' href="#products_cake.html">Заказать</a>
+            <a id='menuButtonContacts' href="#contacts.html">Контакты</a>
+            <a id='menuButtonCart' href="#cart.html">Корзина</a>
           </nav>
         </div>
       </header>
@@ -77,7 +94,7 @@
             Сладости ручной работы
           </p>
           <label for="gr-button" class="lab-button">
-          <input id="gr-button"  class='gr-button' type="button" value="Заказать торт" onclick="location.href='productsCake.html';" />
+          <input id="gr-button"  class='gr-button' type="button" value="Заказать торт" onclick="location.href='#products_cake.html';" />
         </label>
         </div>
       </div>
