@@ -1,0 +1,54 @@
+      <p class="popular-header">
+        Добавить товар
+      </p>
+
+      <form id="addProductForm">
+        <div class="form-container">
+          <label for="nameProduct" class="label-full"><span class="label-name" >Название товара</span>
+              <input id="nameProduct" class="input-full" type="text" />
+            </label>
+        </div>
+
+        <div class="form-container">
+          <label for="description" class="label-full"><span class="label-name">Описание</span>
+              <textarea rows="10" name="text" id="description" class="input-full" name='description'></textarea>
+            </label>
+        </div>
+
+        <div class="form-container">
+          <label for="price" class="label-full"><span class="label-name">Цена</span>
+              <input id="price" class="input-small" name='price' type="number" />
+            </label>
+        </div>
+
+        <div class="form-container">
+          <label for="weigh" class="label-full"><span class="label-name">Вес / кг</span>
+              <input id="weigh" class="input-small" name='weigh' type="number" />
+            </label>
+        </div>
+
+        <div class="form-container">
+          <label for="typeProduct" class="label-full"><span class="label-name">Категория</span>
+              <select id='typeProduct' class="input-small" name='typeProduct' >
+                    <option value="all">Выберите категорию</option>
+                    <option value="wedding">Свадебные</option>
+                    <option value="birthday">На День рождения</option>
+                    <option value="children">Детские</option>
+                    <option value="thematic">Тематические</option>
+                </select>
+            </label>
+        </div>
+
+        <div class="form-container">
+          <label for="foto" class="label-full"><span class="label-name">Фото</span>
+            <input id="foto" class="input-small" name='date' type="text" />
+          </label>
+        </div>
+
+        <label for="add-submit-obj">
+            <input id="add-submit-obj" class="gr-button" type="button" value="Добавить товар"  />
+          </label>
+        <!--  <label for="recuestButton">
+            <input id="recuestButton" class="gr-button" type="submit" value="Загрузить"  />
+          </label>-->
+      </form>

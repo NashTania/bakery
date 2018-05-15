@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Cakes studio</title>
+  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="stylesheet" href="js/lib/jquery-ui/jquery-ui.css">
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+  <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Spectral:400i" rel="stylesheet">
+  <script type="text/javascript" src="js/lib/jquery/dist/jquery.js"></script>
+  <script src="http://jqueryvalidation.org/files/dist/jquery.validate.min.js"></script>
+  <script src="http://jqueryvalidation.org/files/dist/additional-methods.min.js"></script>
+  <script type="text/javascript" src="js/admin/admin_SPA.js"></script>
+  <script type="text/javascript" src="js/list/list_add_obj.js"></script>
+  <script type="text/javascript" src="js/cart/cart_addToCart.js"></script>
+  <script type="text/javascript" src="js/admin/admin_sendRequest.js"></script>
+  <script type="text/javascript" src="js/lib/jquery-ui/jquery-ui.js"></script>
+  <script type="text/javascript" src="js/lib/jQuery.js"></script>
+</head>
+
+<body>
+  <div class="main main-white">
+    <div class="main-header">
+      <header>
+        <!--  <div class='cartContainer'>
+          <label for="buttonCart">
+            <input id="buttonCart"  class='cart-button' <input type="image" src="images/cart.png" />
+          </label>
+        </div>-->
+        <div>
+          <nav>
+            <div id="menuToggle">
+              <input type="checkbox" />
+              <span></span>
+              <span></span>
+              <span></span>
+
+              <ul class="menu">
+                <li><a class="a-menu" href="about_us.html">O нас</a></li>
+                <li><a class="a-menu" href="products.html">Меню</a></li>
+                <li><a class="a-menu" href="productsCake.html">Заказать</a></li>
+                <li><a class="a-menu" href="contacts.html">Контакты</a></li>
+                <li><a class="a-menu" href="cart.html">Корзина</a></li>
+              </ul>
+            </div>
+          </nav>
+        </div>
+
+        <div class="logo">
+          <a href="index.html"> <img class="logo-img" src="images/logo.png" alt="logo"/></a>
+        </div>
+
+        <div class="menu-full">
+          <nav>
+            <a href="about_us.html">O нас</a>
+            <a href="products.html">Меню</a>
+            <a href="order.html">Заказать</a>
+            <a href="contacts.html">Контакты</a>
+            <a href="cart.html">Корзина</a>
+          </nav>
+        </div>
+      </header>
+    </div>
+
+    <div class="content">
+      <p class="popular-header">
+        Добавить товар
+      </p>
+
+      <form id="addProductForm">
+        <div class="form-container">
+          <label for="nameProduct" class="label-full"><span class="label-name" >Название товара</span>
+              <input id="nameProduct" class="input-full" type="text" />
+            </label>
+        </div>
+
+        <div class="form-container">
+          <label for="description" class="label-full"><span class="label-name">Описание</span>
+              <textarea rows="10" name="text" id="description" class="input-full" name='description'></textarea>
+            </label>
+        </div>
+
+        <div class="form-container">
+          <label for="price" class="label-full"><span class="label-name">Цена</span>
+              <input id="price" class="input-small" name='price' type="number" />
+            </label>
+        </div>
+
+        <div class="form-container">
+          <label for="weigh" class="label-full"><span class="label-name">Вес / кг</span>
+              <input id="weigh" class="input-small" name='weigh' type="number" />
+            </label>
+        </div>
+
+        <div class="form-container">
+          <label for="typeProduct" class="label-full"><span class="label-name">Категория</span>
+              <select id='typeProduct' class="input-small" name='typeProduct' >
+                    <option value="all">Выберите категорию</option>
+                    <option value="wedding">Свадебные</option>
+                    <option value="birthday">На День рождения</option>
+                    <option value="children">Детские</option>
+                    <option value="thematic">Тематические</option>
+                </select>
+            </label>
+        </div>
+
+        <div class="form-container">
+          <label for="foto" class="label-full"><span class="label-name">Фото</span>
+            <input id="foto" class="input-small" name='date' type="text" />
+          </label>
+        </div>
+
+        <label for="add-submit">
+            <input id="add-submit" class="gr-button" type="button" value="Добавить товар"  />
+          </label>
+        <!--  <label for="recuestButton">
+            <input id="recuestButton" class="gr-button" type="submit" value="Загрузить"  />
+          </label>-->
+      </form>
+
+    </div>
+
+
+    <footer>
+      <div class="bottom">
+        <div class="logo-bottom">
+          <a href="index.html"><img src="images/logo_bottom.png" /></a>
+        </div>
+        <div class="bottom_icons">
+          <a class="a-icons" href="#"><img src="images/facebook.png" /></a>
+          <a class="a-icons" href="#"><img src="images/twitter.png" /></a>
+          <a class="a-icons" href="#"><img src="images/instagram.png" /></a>
+        </div>
+
+      </div>
+
+    </footer>
+
+  </div>
+  </div>
+
+</body>
+
+</html>
