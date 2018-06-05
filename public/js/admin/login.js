@@ -1,4 +1,4 @@
-function login() {
+function login() { // Mote to some model, view, controller
   var login = "admin";
   var password = '111';
   var loginInput = document.getElementById('login');

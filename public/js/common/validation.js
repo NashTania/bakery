@@ -1,4 +1,4 @@
-$(document).ready(function(){
+$(document).ready(function(){ // Move to view
   $('#orderForm').validate({
     rules:{
       name:{

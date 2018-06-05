@@ -9,6 +9,8 @@ function AbstractController(view, model) {
     this.view = view
   }
   this.model = model
+
+  this.view.setController(this)
 }
 
 AbstractController.prototype = {
@@ -47,8 +49,13 @@ function AbstractView(template) {
 
 AbstractView.prototype = {
   template: null,
+  controller: null,
   render: function() {
 
+  }
+
+  setController: function( controller) {
+    this.controller = controller
   }
 }
 
