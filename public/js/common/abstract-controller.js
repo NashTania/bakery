@@ -20,6 +20,8 @@ function AbstractController(view, model) {
 
 AbstractController.prototype = {
   run: function() {
+    Promise.all([this.view.loadTemplate(), this.model.load()]).then(() => {
     this.view.render()
-  }
+  })
+}
 }

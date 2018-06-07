@@ -1,6 +1,5 @@
 function CartController(view, model) {
   AbstractController.apply(this, arguments);
-
 }
 
 CartController.prototype = new AbstractController();
@@ -20,9 +19,9 @@ CartController.prototype.remove = function(id) {
   var prom1 = new Promise(function(resolve) {
     self.model.getCartArr(resolve)
   })
-  Promise.all([prom1]).then(function(args) {
-    if (args[0]) {
-      var cartArray = JSON.parse(args[0].result);
+  prom1.then(function(value) {
+    if (value) {
+      var cartArray = JSON.parse(value.result);
       var removeId = id;
       for (var i = 0; i < cartArray.length; i++) {
         if (cartArray[i] === removeId) {
@@ -31,7 +30,7 @@ CartController.prototype.remove = function(id) {
         }
       }
     }
-    sendRequest('tatiana_tkachenko_FD2_cakeStudio_cart_' + userId, cartArray);
+    self.model.sendRequest('tatiana_tkachenko_FD2_cakeStudio_cart_' + userId, cartArray);
     alert('товар удален');
   })
 },

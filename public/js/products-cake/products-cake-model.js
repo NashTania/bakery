@@ -3,9 +3,9 @@ function ProductsCakeModel() {
 }
 ProductsCakeModel.prototype = new AbstractCartModel();
 
-ProductsCakeModel.prototype.load = function(resolve) {
+ProductsCakeModel.prototype.load = function() {
   var self = this;
-  var promiseModel = new Promise(function(resolve) {
+  return new Promise(function(resolve) { 
     $.ajax({
       type: "POST",
       url: "https://fe.it-academy.by/AjaxStringStorage2.php",
@@ -15,23 +15,38 @@ ProductsCakeModel.prototype.load = function(resolve) {
       },
 
       success: function(response) {
-        self.data = response;
-        resolve(self.data)
+        var products = JSON.parse(response.result);
+        self.data = products;
+        resolve()
       }
     })
   })
-  return promiseModel
 }
 
-ProductsCakeModel.prototype.getCartArr = function(resolve) {
+ProductsCakeModel.prototype.getCartArr = function() {
   var userId = this.getCartId();
-  $.ajax({
-    type: "POST",
-    url: "https://fe.it-academy.by/AjaxStringStorage2.php",
-    data: {
-      f: 'READ',
-      n: 'tatiana_tkachenko_FD2_cakeStudio_cart_' + userId
-    },
-    success: resolve
+  return new Promise(function(resolve) {
+    $.ajax({
+      type: "POST",
+      url: "https://fe.it-academy.by/AjaxStringStorage2.php",
+      data: {
+        f: 'READ',
+        n: 'tatiana_tkachenko_FD2_cakeStudio_cart_' + userId
+      },
+      success: resolve
+    })
   })
+},
+
+// Pass salutation value as an argument
+ProductsCakeModel.prototype.sortCard = function() {
+  var result = [];
+  var products = this.data;
+  if (salutation.value === 'not-selected') {
+    return result = products;
+  }
+  return result = products.filter(function(item) {
+    return salutation.value === item.type
+  })
+
 }

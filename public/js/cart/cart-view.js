@@ -6,9 +6,8 @@ CartView.prototype = new AbstractView();
 
 CartView.prototype.template = 'cart.html'
 
-CartView.prototype.renderView = function(data) {
-  var arrScreen = data;
-  var self = this;
+CartView.prototype.renderView = function() {
+  var arrScreen = this.controller.model.data; 
   for (var g = 0; g < arrScreen.length; g++) {
     var cardItem = arrScreen[g];
     var divVertical = document.createElement('div');
@@ -93,7 +92,8 @@ CartView.prototype.renderView = function(data) {
   var sum = this.controller.model.priceCalculation();
   pTotal.innerText = 'Итого: ' + sum + 'р.';
 
-  $('.button-remove').click(function() {
+  var self = this;
+  $('.button-remove').click(function(event) {
     self.controller.onRemoveClick(event)
   })
 }

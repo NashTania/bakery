@@ -4,7 +4,7 @@ function AbstractCartModel() {
 
 AbstractCartModel.prototype = new AbstractModel();
 
-AbstractCartModel.prototype.makeid = function() {// Read SOLID princeples of OOP
+AbstractCartModel.prototype.makeid = function() {
   var text = "";
   var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
 

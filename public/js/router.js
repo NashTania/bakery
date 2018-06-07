@@ -1,7 +1,7 @@
 window.onhashchange = switchToStateFromURLHash;
 var routes = null;
 
-function switchToStateFromURLHash(resolve) {
+function switchToStateFromURLHash(resolve) { // Refactor this function
   var URLHash = window.location.hash;
   routes[URLHash.substr(1)].run(URLHash.substr(1));
 }
@@ -14,7 +14,8 @@ $(document).ready(function() {
     'products_cake.html': new ProductsCakeController(new ProductsCakeView(), new ProductsCakeModel()),
     'contacts.html': new AbstractController('contacts.html'),
     'cart.html': new CartController(new CartView(), new CartModel()),
-    'add-product.html': new AddProductController(new AddProductView(), new AddProductModel())
+    'add-product.html': new AddProductController(new AddProductView(), new AddProductModel()),
+    'ordering.html': new AbstractController('ordering.html'),
   };
   switchToStateFromURLHash();
 });

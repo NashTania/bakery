@@ -6,7 +6,6 @@ CartModel.prototype = new AbstractCartModel();
 CartModel.prototype.load = function(resolve) {
   let self = this;
   self.modelStr = [];
-  let promiseModel = new Promise(function(resolve) {
     let prom1 = new Promise(function(resolve) {
       var userId = self.getCartId();
       $.ajax({
@@ -35,7 +34,6 @@ CartModel.prototype.load = function(resolve) {
 
     return Promise.all([prom1, prom2]).then((args) => {
       var cardArray = JSON.parse(args[0].result);
-      //console.log(cardArray)
       var productsArray = JSON.parse(args[1].result);
       var arrScreen = [];
       nevImput : for (var i = 0; i < cardArray.length; i++) { // move to the model
@@ -50,10 +48,9 @@ CartModel.prototype.load = function(resolve) {
         }
       }
       self.data = arrScreen;
-      resolve(self.data)
+      resolve
     })
-  })
-  return promiseModel
+
 }
 
 CartModel.prototype.getCartArr = function(resolve) {

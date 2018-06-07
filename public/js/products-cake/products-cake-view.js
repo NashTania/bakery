@@ -6,10 +6,8 @@ ProductsCakeView.prototype = new AbstractView();
 
 ProductsCakeView.prototype.template = 'products_cake.html';
 
-ProductsCakeView.prototype.renderView = function(data) {
-  var self = this;
-  console.log(data)
-  var products = JSON.parse(data.result);
+ProductsCakeView.prototype.renderView = function() {
+  var products = this.controller.model.sortCard();
   for (var i = 0; i < products.length; i++) {
     var product = products[i];
     var flexContainer = document.getElementById('flexContainer');
@@ -55,33 +53,16 @@ ProductsCakeView.prototype.renderView = function(data) {
     labelButton.htmlFor = inputButton.id;
     inputButton.setAttribute('data-id', product.id);
   }
+  var self = this;
   $('.button-cart').click(function(event) {
     self.controller.onAddCart(event)
   })
 
-  function sortCard() {
-    var result = [];
-    var productsArr = self.controller.model.data;
-    var products = JSON.parse(productsArr.result);
-    var salutValue = salutation.value;
-    for (var i = 0; i < products.length; i++) {
-      var product = products[i];
-      if (salutation.value === 'Выберите категорию') {
-        result.push(product);
-      } else if (salutation.value === product.type) {
-        result.push(product);
-      }
-    }
-    result = JSON.stringify(result);
-    var data = {};
-    data.result = result;
-    $('.card-text-three').hide();
-    self.renderView(data)
-  }
-
   $('#salutation').selectmenu({
     change: function(event, ui) {
-      sortCard();
+      self.controller.model.sortCard();
+      $('.card-text-three').remove();
+      self.renderView();
     }
   })
 }
