@@ -21,7 +21,7 @@ AbstractView.prototype = {
 
       return new Promise(function(resolve) {
         $.ajax({
-          url: './public/' + self.template,
+          url: self.template,
           type: 'GET',
           dataType: 'text',
           success: function(response) {

@@ -31,7 +31,7 @@ CartView.prototype.renderView = function() {
     var imgCart = document.createElement('img');
     rowCell1.appendChild(imgCart);
     imgCart.classList.add('img-table');
-    imgCart.src = './public/src/' + cardItem.img;
+    imgCart.src = './src/' + cardItem.img;
 
     var divVerticalCell = document.createElement('div');
     divRow.appendChild(divVerticalCell);

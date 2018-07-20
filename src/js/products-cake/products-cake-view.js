@@ -20,7 +20,7 @@ ProductsCakeView.prototype.renderView = function() {
     var imgCard = document.createElement('img');
     card.appendChild(imgCard);
     imgCard.classList.add('type-img');
-    imgCard.src ='./public/src/' + product.img;
+    imgCard.src ='./src/' + product.img;
 
     var hover = document.createElement('div');
     card.appendChild(hover);

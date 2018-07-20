@@ -8,7 +8,8 @@ app.get('/', function(req, res){
 
 app.use(express.static('src'));
 app.use(express.static('./'));
-app.use(express.static('public'));
+app.use(express.static(__dirname + '/src'));
+//app.use(express.static('public'));
 
 http.listen(8080, function(){
   console.log('listening on *:8080');

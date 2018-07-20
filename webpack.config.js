@@ -5,7 +5,7 @@ global.jQuery = require('jquery');
 
 
 module.exports = {
-  entry: './public/src/router.js',
+  entry: './src/router.js',
   output: {
     filename: 'main.js',
     path: path.resolve(__dirname, './dist'),
@@ -33,7 +33,7 @@ module.exports = {
   devServer: {
     contentBase: [
       path.join(__dirname, '/'),
-      path.join(__dirname, '/public/src/'),
+      path.join(__dirname, '/src/'),
     ]
   },
   devtool: 'eval'
